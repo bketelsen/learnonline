@@ -1,0 +1,12 @@
+<div class="card" >
+    <div class="card-header">
+        <h4 class="card-title"><%= post.Title %></h4>
+	<p class="text-danger"><%= post.Lede %></p>
+	<p class="category"><%= timestamp(post.Timestamp) %></p>
+    </div>
+</div>
+<div class="card" >
+            <div class="card-content">
+		<%= markdown(post.Body) %>
+	    </div> 
+</div>

@@ -1,0 +1,15 @@
+@import "~font-awesome/css/font-awesome.css";
+@import "./bootstrap.min.css";
+@import "./paper-dashboard.css";
+@import "./themify-icons.css";
+
+.breadcrumb {
+    background-color: #ffffff;
+}
+
+.breadcrumb>.active {
+    color: #66615b;
+}
+.breadcrumb a{
+    color: #ef8157;
+}

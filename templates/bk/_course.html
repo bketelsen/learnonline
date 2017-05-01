@@ -1,0 +1,21 @@
+<tr>
+    <td>
+        <div class="img-container">
+            <a href="/courses/<%= course.Course.CourseSlug %>"><img src="http://127.0.0.1:8080<%= course.Course.Thumbnail %>" alt="Agenda"></a>
+        </div>
+    </td>
+    <td class="td-product">
+        <a href="/courses/<%= course.Course.CourseSlug %>"><strong><%= course.Course.Title %></strong></a>
+        <p><%= course.Course.Description %></p>
+    </td>
+    <td class="td-price">
+        <small><%= currency(course.Course.Price) %></small>
+    </td>
+    <td class="td-number">
+        <%= if (course.Course.Purchased) { %>
+        <a href="/classroom/<%= course.Course.CourseSlug %>"><button class="btn btn-danger btn-fill btn-wd">Enter</button></a>
+        <% } else { %>
+        <a href="/courses/<%= course.Course.CourseSlug %>"><button class="btn btn-info btn-fill btn-wd">Preview</button></a>
+        <% } %>
+    </td>
+</tr>

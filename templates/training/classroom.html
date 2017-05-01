@@ -1,0 +1,45 @@
+<div class="card">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/classroom/<%= cour.Course.CourseSlug %>"><%= cour.Course.Title %></a></li>
+    </ol>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title"><%= cour.Course.Title %></h4>
+        <p class="category"><%= cour.Course.Description %></p>
+    </div>
+    <div class="card-content table-responsive table-full-width">
+        <table class="table table-hover">
+            <thead>
+            <th></th>
+            <th>Module</th>
+            <th>Length</th>
+            <th>Description</th>
+            <th></th>
+            </thead>
+            <tbody>
+            <%= for (index, mod) in cour.Modules { %>
+            <tr class="success">
+                <td><img src="http://127.0.0.1:8080<%=mod.Thumbnail %>"/></td>
+                <td><%= mod.Title %></td>
+                <td><%= mod.Minutes %> min</td>
+                <td><%= mod.Description %></td>
+                <td>
+                    <a href="/classroom/<%= cour.Course.Slug %>/<%= mod.Slug %>">
+                        <button type="button" class="btn btn-wd btn-fill btn-default btn-move-right">
+                            View Module
+                            <span class="btn-label">
+	                                                <i class="ti-control-play"></i>
+	                                            </span>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>
+

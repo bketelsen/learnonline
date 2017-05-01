@@ -1,0 +1,31 @@
+<tr>
+    <td>
+        <div class="img-container">
+            <a href="/training/online/<%= webinar.WebinarSlug %>"><img
+                    src="http://127.0.0.1:8080<%= webinar.Thumbnail %>" alt="Agenda"></a>
+        </div>
+    </td>
+    <td class="td-product">
+        <a href="/training/live/<%= webinar.WebinarSlug %>"><strong><%= webinar.Title %></strong></a>
+        <p><%= webinar.Description %></p>
+    </td>
+    <td class="td-price">
+        <i class='ti-<%= if (lvl == "success") { %>cloud<% } else { %>headphone-alt<% } %>'></i> <span
+            class="text-<%= lvl %>"><%= typ %></span>
+    </td>
+
+    <td class="td-price">
+        <small><%= currency(webinar.Price) %></small>
+    </td>
+    <td class="td-number">
+        <%= if (webinar.Purchased) { %>
+        <a href="/classroom/<%= webinar.WebinarSlug %>">
+            <button class="btn btn-<%= lvl %> btn-fill btn-wd">Enter</button>
+        </a>
+        <% } else { %>
+        <a href="/training/live/<%= webinar.WebinarSlug %>">
+            <button class="btn btn-<%= lvl %> btn-fill btn-wd">More Info</button>
+        </a>
+        <% } %>
+    </td>
+</tr>

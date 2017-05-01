@@ -1,0 +1,7 @@
+training:
+  baseurl: 127.0.0.1:3000
+  basedir: training
+
+micro:
+  baseurl: gomicrou.dev:3000
+  basedir: micro

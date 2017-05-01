@@ -1,0 +1,18 @@
+<li class="<%=inverted(index) %>">
+								        <div class="timeline-badge danger">
+										  <i class="ti-announcement"></i>
+									    </div>
+								    	<div class="timeline-panel">
+									        <div class="timeline-heading">
+											<a href="/blog/<%= post.BlogSlug %>"><span class="label label-info"><%= post.Title %></span></a>
+									        </div>
+								        	<div class="timeline-body">
+											<p><%= post.Lede %></p>
+								        	</div>
+		                                    <h6>
+		                                        <i class="ti-time"></i>
+							<%= timestamp(post.Timestamp) %>
+		                                    </h6>
+								      </div>
+								    </li>
+								

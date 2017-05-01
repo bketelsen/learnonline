@@ -1,0 +1,51 @@
+<div class="card">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/classroom/<%= cour.Course.CourseSlug %>"><%= cour.Course.Title %></a></li>
+        <li class="breadcrumb-item active"><%= module.Title %></li>
+    </ol>
+</div>
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title"><%= module.Title %></h4>
+        <p class="category"><%= module.Description %></p>
+    </div>
+    <div class="card-content table-responsive table-full-width">
+        <div class="card">
+            <div class="card-content">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active" id="livideo"><a href="#video" data-toggle="tab">Video</a></li>
+                            <li><a href="#exercise" data-toggle="tab">Exercise</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="my-tab-content" class="tab-content text-center">
+                    <div class="tab-pane active" id="video" data-vimeo-id="<%= module.VideoId %>" data-vimeo-width="640">
+                    </div>
+                    <div class="tab-pane text-left" id="exercise">
+
+                        <p><%= markdown(module.Exercise) %></p>
+<script src="//katacoda.com/embed.js"></script> 
+<div class="container">     
+    <div class="row">         
+        <div id="katacoda-terminal" data-katacoda-id="bketelsen/hello-world" data-katacoda-layout="editor-terminal-split" data-katacoda-color="2977B6" data-katacoda-secondary="2977B6" data-katacoda-font="Roboto" data-katacoda-fontheader="Roboto" data-katacoda-prompt=">" style="height: 600px;">
+        </div>     
+    </div> 
+</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
+
+
+    <script>
+        var videoPlayer = new Vimeo.Player('video');
+        videoPlayer.on('play', function() {
+            console.log('played the video');
+        })
+    </script>

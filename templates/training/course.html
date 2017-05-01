@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-lg-8 col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title"><%= cour.Course.Title %></h4>
+                <p class="category"></p>
+            </div>
+            <div class="card-content">
+                <div class="row">
+                    <div class="left-vertical-tabs">
+                        <ul class="nav nav-stacked" role="tablist">
+                            <li>
+                                <a href="#topic" role="tab" data-toggle="tab">
+                                    Topic
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#description" role="tab" data-toggle="tab">
+                                    Description
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#level" role="tab" data-toggle="tab">
+                                    Level
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#outline" role="tab" data-toggle="tab">
+                                    Outline
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-text-tabs">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="topic">
+                                <p><%= cour.Course.Topic %></p>
+                            </div>
+                            <div class="tab-pane" id="description">
+                                <p><%= cour.Course.Description %></p>
+                            </div>
+                            <div class="tab-pane" id="level">
+                                <p><%= cour.Course.Level %></p>
+                            </div>
+                            <div class="tab-pane" id="outline">
+                                <%= for (mod) in cour.Modules { %>
+                                <span class="text-warning"><%= mod.Title %></span><br/>
+                                <%= mod.Description %><hr/>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%= partial(templatebase+"/" + "buy.html") %>
+

@@ -1,0 +1,47 @@
+<ul class="nav">
+    <%= if (current_user ) { %>
+    <li>
+        <a data-toggle="collapse" href="#dashboardOverview">
+            <i class="ti-folder"></i>
+            <p>My Courses
+                <b class="caret"></b>
+            </p>
+        </a>
+        <div class="collapse" id="dashboardOverview">
+            <ul class="nav">
+                <li>
+                    <%= for (index,c) in courses { %>
+                    <%= if (c.Course.Purchased) { %>
+                    <a href="/classroom/<%= c.Course.CourseSlug %>">
+                        <i class="ti-folder"></i>
+                        <span class="sidebar-normal"><%= c.Course.Title%></span>
+
+                        <% } %>
+                        <% } %>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+    <% } %>
+    <li>
+        <a href="/training/online">
+            <i class="ti-cloud"></i>
+            <p>Self-Paced Training</p>
+        </a>
+    </li>
+    <li>
+        <a href="/training/live">
+            <i class="ti-headphone-alt"></i>
+            <p>Live Online Training</p>
+        </a>
+    </li>
+    <li>
+        <a href="/training/onsite">
+            <i class="ti-calendar"></i>
+            <p>Onsite Training</p>
+        </a>
+    </li>
+
+
+</ul>

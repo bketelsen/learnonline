@@ -1,0 +1,28 @@
+<%= if (current_user) { %>
+<%= if (!course.Purchased) { %> 
+    <form action="/courses/purchase/<%= cour.Course.ID %>" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                                                      data-key="<%= stripe_pk %>"
+                                                      data-amount="<%= cour.Course.Price %>"
+                                                      data-name="<%= cour.Course.Title %>"
+                                                      data-description="<%= cour.Course.Description %>"
+        data-image="/assets/images/logo.svg"
+        data-locale="auto"
+        data-label="Buy Now! - <%= currency(cour.Course.Price) %>"
+
+        data-panel-label="Buy Now! "
+        data-email="<%= current_user.Email.String %>"
+        >
+      </script>
+    </form>
+  	<% } %>
+  <% } else { %>
+  <%= if (course.Price) { %> 
+    <button class="btn btn-info" disabled><%= currency(cour.Course.Price) %></button>
+    <em>You must be logged in to to buy this course.</em>
+    <% } else { %> 
+    <em>You must be logged in to to view this course.</em>
+  	<% } %>
+  <% } %>
+
